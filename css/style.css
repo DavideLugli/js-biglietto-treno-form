@@ -8,6 +8,16 @@ body {
   background-color: crimson;
 }
 
+.hidden {
+  opacity: 0;
+  transition: 1s;
+}
+
+.display {
+  opacity: 1;
+  transition: 1s;
+}
+
 .title {
   color: white;
   text-transform: uppercase;

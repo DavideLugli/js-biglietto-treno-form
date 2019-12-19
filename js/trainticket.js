@@ -36,5 +36,20 @@ btnGenera.addEventListener('click',
     var cp = Math.floor(Math.random() * (100000 - 90000 + 1) + 90000);
     document.getElementById('carrozza').innerHTML = carrozza;
     document.getElementById('cp-code').innerHTML = cp;
+    var bigliettoDisplay = document.getElementById('biglietto');
+    bigliettoDisplay.classList.remove('hidden');
+    bigliettoDisplay.classList.add('display');
+
+  }
+);
+var btnAnnulla = document.getElementById('annulla');
+btnAnnulla.addEventListener('click',
+  function() {
+    document.getElementById('nome-viaggiatore').value = '';
+    document.getElementById('km').value = '';
+    document.getElementById('eta-viaggiatore').value = '';
+    var bigliettoDisplay = document.getElementById('biglietto');
+    bigliettoDisplay.classList.remove('display');
+    bigliettoDisplay.classList.add('hidden');
   }
 );
