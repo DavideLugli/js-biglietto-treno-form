@@ -2,43 +2,39 @@ var btnGenera = document.getElementById('genera');
 btnGenera.addEventListener('click',
   function() {
     var inputNome = document.getElementById('nome-viaggiatore');
-    console.log(inputNome);
     var nomePasseggero = inputNome.value;
     console.log(nomePasseggero);
 
     var inputKm = document.getElementById('km');
-    console.log(inputKm);
-    var lunghezzaViaggio = inputKm.value;
+    var lunghezzaViaggio = parseInt(inputKm.value);
     console.log(lunghezzaViaggio);
 
     var inputEta = document.getElementById('eta-viaggiatore');
-    console.log(inputEta);
     var etaPasseggero = inputEta.value;
     console.log(etaPasseggero);
+
+    // prezzo biglietto (0.21euro/km)
+    var prezzoBiglietto = 0.21 * lunghezzaViaggio;
+    var offerta = 'Standard';
+
+    // sconto del 20% se minorenne
+    if (etaPasseggero == 'minorenne') {
+      prezzoBiglietto -= ((prezzoBiglietto / 100) * 20);
+      offerta = 'Sconto Minorenne';
+
+    }
+    // sconto 40% se over 65
+    else if (etaPasseggero == 'over65') {
+      prezzoBiglietto -= ((prezzoBiglietto / 100) * 40);
+      offerta = 'Sconto Senior';
+    }
+
+    document.getElementById('nome-passeggero').innerHTML = nomePasseggero;
+    document.getElementById('offerta').innerHTML = offerta;
+    document.getElementById('costo').innerHTML = prezzoBiglietto.toFixed(2);
+    var carrozza = Math.floor(Math.random() * 10) + 1;
+    var cp = Math.floor(Math.random() * (100000 - 90000 + 1) + 90000);
+    document.getElementById('carrozza').innerHTML = carrozza;
+    document.getElementById('cp-code').innerHTML = cp;
   }
 );
-
-// chiedere all’utente l’età
-// var etaPasseggero = parseInt(prompt('Quanti anni hai?'));
-// console.log(etaPasseggero);
-// // prezzo biglietto (0.21euro/km)
-// var prezzoBiglietto = 0.21 * lunghezzaViaggio;
-//
-// // sconto del 20% se minorenne
-// if (etaPasseggero < 18) {
-//   prezzoBiglietto = prezzoBiglietto - ((prezzoBiglietto / 100) * 20);
-//   console.log(prezzoBiglietto);
-//   alert('applicato sconto del 20%');
-//   document.writeln("il tuo biglietto costa " + prezzoBiglietto + " euro");
-// }
-// // sconto 40% se over 65
-// else if (etaPasseggero >= 65) {
-//   prezzoBiglietto = prezzoBiglietto - ((prezzoBiglietto / 100) * 40);
-//   console.log(prezzoBiglietto);
-//   alert('applicato sconto del 40%');
-//   document.writeln("il tuo biglietto costa " + prezzoBiglietto + " euro");
-// } else {
-//   var prezzoBiglietto = 0.21 * lunghezzaViaggio;
-//   console.log(prezzoBiglietto);
-//   document.writeln("il tuo biglietto costa " + prezzoBiglietto + " euro");
-// }
