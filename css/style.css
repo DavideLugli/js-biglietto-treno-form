@@ -20,6 +20,7 @@ body {
   background-color: white;
   border-radius: 10px;
   text-align: center;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
 }
 
 .row {
@@ -41,16 +42,28 @@ label {
 input {
   border: 1px solid crimson;
   border-radius: 5px;
-  text-align: center;
+  font-size: 15px;
   padding: 10px;
   height: 30px;
 }
-
+input:focus,
+select:focus {
+  background-color: crimson;
+  color: white;
+}
+input:focus::placeholder {
+  color: white;
+}
+input::placeholder {
+  font-size: 15px;
+  text-align: center;
+}
 select {
   height: 30px;
   border: 1px solid crimson;
   border-radius: 5px;
   text-align: center;
+  font-size: 15px;
 }
 
 .btn {
@@ -67,4 +80,27 @@ select {
 .btn:hover {
   color: white;
   background-color: darkgrey;
+}
+
+.biglietto {
+  background-color: white;
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.biglietto-passeggero.row {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.col-sx {
+  width: 20%;
+  background-color: darkgrey;
+  text-align: center;
+  margin: 0;
+}
+.col-dx {
+  width: 80%;
+  text-align: left;
+  margin: 0;
 }
