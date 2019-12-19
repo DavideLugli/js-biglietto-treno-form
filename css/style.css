@@ -46,18 +46,22 @@ input {
   padding: 10px;
   height: 30px;
 }
+
 input:focus,
 select:focus {
   background-color: crimson;
   color: white;
 }
+
 input:focus::placeholder {
   color: white;
 }
+
 input::placeholder {
   font-size: 15px;
   text-align: center;
 }
+
 select {
   height: 30px;
   border: 1px solid crimson;
@@ -93,12 +97,14 @@ select {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
 }
+
 .col-sx {
   width: 20%;
   background-color: darkgrey;
   text-align: center;
   margin: 0;
 }
+
 .col-dx {
   width: 80%;
   text-align: left;
